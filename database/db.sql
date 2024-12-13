@@ -6,7 +6,7 @@ CREATE TABLE roles (
 ) ENGINE = InnoDB;
 
 CREATE TABLE usuarios (
-    id_usuarios INT (20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT (20) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     rol_id INT (11) NOT NULL,
     email VARCHAR (255) NOT NULL UNIQUE KEY,
     password TEXT NOT NULL,

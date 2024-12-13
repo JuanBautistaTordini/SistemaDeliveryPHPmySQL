@@ -38,6 +38,7 @@ if ($contador > 0) {
     //iniciar sesión
     session_start();
     $_SESSION['mensaje'] = 'Ingreso exitoso';
+    $_SESSION['session_email'] = $email;
 
     // redireccion $APP_URL = ./admin
     header('Location: '.APP_URL.'/admin');
@@ -47,7 +48,7 @@ if ($contador > 0) {
     //iniciar sesión
     session_start();
     $_SESSION['mensaje'] = 'Ingreso fallido';
-    
+
     //redireccion $APP_URL = ./login
     header('Location: '.APP_URL.'/login');
 }
