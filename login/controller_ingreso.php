@@ -47,6 +47,7 @@ if ($contador > 0) {
     //iniciar sesión
     session_start();
     $_SESSION['mensaje'] = 'Ingreso fallido';
+    
     //redireccion $APP_URL = ./login
     header('Location: '.APP_URL.'/login');
 }

@@ -30,6 +30,15 @@
     <div class="card-header text-center">
       <a href="#" class="h1"><b><?=APP_NAME;?></b></a>
     </div>
+  
+    <?php 
+      session_start();
+
+      if(isset ($_SESSION ['mensaje'])){
+          echo $_SESSION ['mensaje'];
+      }
+    ?>
+
     <div class="card-body">
       <p class="login-box-msg"><b>Inicio De Sesión</b></p>
 
