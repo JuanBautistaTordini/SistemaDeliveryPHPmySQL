@@ -3,7 +3,7 @@ include('../../app/config.php'); //incluir archivo de configuración
 
 include('../../admin/layout/parte1.php'); //cargar la primera parte del layout
 
-include('../../app/roles/listado-de-roles.php'); //cargar el listado de roles
+include('../../app/controllers/roles/listado-de-roles.php'); //cargar el listado de roles
 
 ?>
 <div class="content-wrapper">
@@ -13,6 +13,13 @@ include('../../app/roles/listado-de-roles.php'); //cargar el listado de roles
     <div class="container-fluid"> 
       <div class="container">
         <h1>Listado De Roles</h1>
+        <?php
+        foreach ($roles as $rol) {
+            //echo $rol['nombre_rol'];
+            // CARD 
+            
+        }
+        ?>
       </div>
     </div>
   </div>
