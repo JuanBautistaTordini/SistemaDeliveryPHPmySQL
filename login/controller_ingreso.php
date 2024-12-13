@@ -33,9 +33,22 @@ foreach ($usuarios as $usuario) {
 
 //mostrar mensaje de ingreso exitoso o fallido
 if ($contador > 0) {
-    echo "Ingreso exitoso";
+    // echo "Ingreso exitoso";
+    
+    //iniciar sesión
+    session_start();
+    $_SESSION['mensaje'] = 'Ingreso exitoso';
+
+    // redireccion $APP_URL = ./admin
+    header('Location: '.APP_URL.'/admin');
 } else {
-    echo "Ingreso fallido";
+    // echo "Ingreso fallido";
+
+    //iniciar sesión
+    session_start();
+    $_SESSION['mensaje'] = 'Ingreso fallido';
+    //redireccion $APP_URL = ./login
+    header('Location: '.APP_URL.'/login');
 }
 
 ?>
