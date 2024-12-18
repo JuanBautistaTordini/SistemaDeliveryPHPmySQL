@@ -41,7 +41,7 @@
           <script>
             Swal.fire({
               position: "top-end",
-               icon: "error",
+               icon: "success",
               title: "<?= $mensaje; ?>",
               showConfirmButton: false,
               timer: 4500
