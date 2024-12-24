@@ -1,7 +1,12 @@
 <?php
 include('../../app/config.php'); // Incluir archivo de configuración
 include('../../admin/layout/parte1.php'); // Cargar la primera parte del layout
-include('../../app/controllers/roles/listado-de-roles.php'); // Cargar el listado de roles
+
+// clase para mostrar los datos de un rol
+include('../../app/controllers/roles/controller_roles.php');
+
+$controller_roles = new Controller_Roles();
+$roles = $controller_roles->listado_de_roles();
 ?>
 <div class="content-wrapper">
   <br>

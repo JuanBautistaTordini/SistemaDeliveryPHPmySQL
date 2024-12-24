@@ -20,8 +20,8 @@ include('../../admin/layout/parte1.php'); // Cargar la primera parte del layout
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <label for="">Nombre del rol</label>
-                            <input type="text" name="nombre_rol" class="form-control">
+                            <label for="">Nombre del rol</label><b>*</b>
+                            <input type="text" name="nombre_rol" class="form-control" required>
                           </div>
                         </div>
                       </div>
@@ -29,7 +29,7 @@ include('../../admin/layout/parte1.php'); // Cargar la primera parte del layout
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <a href="" class="btn btn-danger">Cancelar</a>
+                            <a onclick="window.history.back();" class="btn btn-danger">Cancelar</a>
                             <button type="submit" class="btn btn-primary">Crear</button>
                           </div>
                         </div>

@@ -4,8 +4,9 @@
 include('../../app/config.php'); // Incluir archivo de configuración
 include('../../admin/layout/parte1.php'); // Cargar la primera parte del layout
 $id_rol = $_GET['id'];
-include('../../app/controllers/roles/controller_roles.php'); // Cargar el listado de roles
 
+// clase para mostrar los datos de un rol
+include('../../app/controllers/roles/controller_roles.php'); // Cargar el listado de roles
 $controller_roles = new controller_roles();
 $rol = $controller_roles -> datos_rol($id_rol);
 ?>
@@ -37,6 +38,11 @@ $rol = $controller_roles -> datos_rol($id_rol);
                 <div class="form-group mb-3">
                   <label for="fyhCreacion" class="form-label">Fecha y Hora de Creación:</label>
                   <p id="fyhCreacion" class="form-text"><?=$rol['fyh_creacion'];?></p>
+                </div>
+                <!-- Grupo para fyh_actualizacion -->
+                <div class="form-group mb-3">
+                  <label for="fyhCreacion" class="form-label">Fecha y Hora de Actualizacion:</label>
+                  <p id="fyhCreacion" class="form-text"><?=$rol['fyh_actualizacion'];?></p>
                 </div>
               </div>
             </div>

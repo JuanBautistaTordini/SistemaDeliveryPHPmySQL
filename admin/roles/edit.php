@@ -22,20 +22,21 @@ $rol = $controller_roles -> datos_rol($id_rol);
           </span>
         </div>
         <!-- Título -->
-        <h1 class="mb-4"><?=$rol['nombre_rol'];?></h1>
+        <h1 class="mb-4">Modificar: <?=$rol['nombre_rol'];?></h1>
         <div class="row">
           <div class="col-md-6">
-            <div class="card card-outline card-primary">
+            <div class="card card-outline card-success">
                 <div class="card-header">
                     <h3 class="card-title">Ingrese los datos</h3>
                 </div>
                 <div class="card-body">
-                    <form action="<?=APP_URL;?>/app/controllers/roles/create.php" method="POST">
+                    <form action="<?=APP_URL;?>/app/controllers/roles/update.php" method="POST">
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <label for="">Nombre del rol</label>
-                            <input type="text" name="nombre_rol" class="form-control">
+                            <label for="">Nombre del rol</label><b>*</b>
+                            <input type="text" name="id_rol" value="<?=$id_rol;?>" hidden>
+                            <input type="text" value="<?=$rol['nombre_rol'];?>" name="nombre_rol" class="form-control" required>
                           </div>
                         </div>
                       </div>
@@ -43,8 +44,8 @@ $rol = $controller_roles -> datos_rol($id_rol);
                       <div class="row">
                         <div class="col-md-12">
                           <div class="form-group">
-                            <a href="" class="btn btn-danger">Cancelar</a>
-                            <button type="submit" class="btn btn-primary">Crear</button>
+                            <a onclick="window.history.back();" class="btn btn-danger">Cancelar</a>
+                            <button type="submit" class="btn btn-success">Actualizar</button>
                           </div>
                         </div>
                       </div>
