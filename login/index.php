@@ -33,24 +33,27 @@
     <div class="card-header text-center">
       <a href="#" class="h1"><b><?=APP_NAME;?></b></a>
     </div>
-      <?php 
-        session_start();
-        if(isset ($_SESSION ['mensaje'])){
-          $mensaje = $_SESSION ['mensaje'];
+    <?php 
+      session_start();
+      if(isset ($_SESSION['mensaje'])){
+          $mensaje = $_SESSION['mensaje'];
+          $mensaje_tipo = isset($_SESSION['mensaje_tipo']) ? $_SESSION['mensaje_tipo'] : 'success';  // Predeterminado a 'success'
           ?>
           <script>
-            Swal.fire({
-              position: "top-end",
-               icon: "success",
-              title: "<?= $mensaje; ?>",
-              showConfirmButton: false,
-              timer: 4500
-            });
+              Swal.fire({
+                  position: "top-end",
+                  icon: "<?= $mensaje_tipo; ?>",  // Se usa el tipo de mensaje (success o error)
+                  title: "<?= $mensaje; ?>",
+                  showConfirmButton: false,
+                  timer: 4500
+              });
           </script>
-        <?php
-          unset($_SESSION ['mensaje']);
-        }
-      ?>
+          <?php
+          unset($_SESSION['mensaje']);
+          unset($_SESSION['mensaje_tipo']);
+      }
+    ?>
+
 
     <div class="card-body">
       <p class="login-box-msg"><b>Inicio De Sesión</b></p>

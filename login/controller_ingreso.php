@@ -31,26 +31,23 @@ foreach ($usuarios as $usuario) {
     $contador++;
 }
 
-//mostrar mensaje de ingreso exitoso o fallido
+// Si el ingreso es exitoso
 if ($contador > 0) {
-    // echo "Ingreso exitoso";
-    
-    //iniciar sesión
     session_start();
     $_SESSION['mensaje'] = 'Ingreso exitoso';
+    $_SESSION['mensaje_tipo'] = 'success';  // Se agrega un campo para el tipo de mensaje
     $_SESSION['session_email'] = $email;
 
-    // redireccion $APP_URL = ./admin
+    // redireccionar
     header('Location: '.APP_URL.'/admin');
 } else {
-    // echo "Ingreso fallido";
-
-    //iniciar sesión
     session_start();
     $_SESSION['mensaje'] = 'Ingreso fallido';
+    $_SESSION['mensaje_tipo'] = 'error';  // Se agrega un tipo de mensaje "error"
 
-    //redireccion $APP_URL = ./login
+    // redireccionar
     header('Location: '.APP_URL.'/login');
 }
+
 
 ?>

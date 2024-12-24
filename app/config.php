@@ -19,4 +19,6 @@ try {
     print_r("Error de conexión con la base de datos: " . $excepcion->getMessage());
 }
 
+date_default_timezone_set('America/Argentina/Buenos_Aires'); // Configurar la zona horaria
+$fyh = date('Y-m-d H:i:s'); // Fecha y hora actual
 ?>

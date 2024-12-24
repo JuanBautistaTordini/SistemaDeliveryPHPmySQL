@@ -20,5 +20,6 @@ include('../admin/layout/parte1.php'); //cargar la primera parte del layout
 <?php 
 
 include('../admin/layout/parte2.php'); //cargar la segunda parte del layout
+include('../layout/mensaje.php'); //cargar el mensaje
 
 ?>

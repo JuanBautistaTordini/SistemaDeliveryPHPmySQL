@@ -23,14 +23,16 @@ include('../../app/controllers/roles/listado-de-roles.php'); // Cargar el listad
               <tbody>
                 <?php 
                 $contador = 1; // Inicializar contador
-                foreach ($roles as $rol): ?>
+                foreach ($roles as $rol): 
+                  $id_rol = $rol['id_rol']; // Obtener el id del rol
+                ?>
                   <tr>
                     <td><?= $contador++; ?></td>
                     <td><?= htmlspecialchars($rol['nombre_rol']); ?></td>
                     <td>
-                      <a href="mostrar_rol.php?id=<?= $rol['id_rol']; ?>" class="btn btn-sm btn-primary">Mostrar</a>
-                      <a href="editar_rol.php?id=<?= $rol['id_rol']; ?>" class="btn btn-sm btn-warning">Editar</a>
-                      <a href="eliminar_rol.php?id=<?= $rol['id_rol']; ?>" class="btn btn-sm btn-danger">Eliminar</a>
+                      <a href="show.php?id=<?=$id_rol;?>" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
+                      <a href="edit.php?id=<?=$id_rol;?>" class="btn btn-sm btn-warning"><i class="bi bi-pencil-square"></i></a>
+                      <a href="delete.php?id=<?=$id_rol;?>" class="btn btn-sm btn-danger"><i class="bi bi-trash3-fill"></i></a>
                     </td>
                   </tr>
                 <?php endforeach; ?>
@@ -46,6 +48,7 @@ include('../../app/controllers/roles/listado-de-roles.php'); // Cargar el listad
 
 <?php 
 include('../../admin/layout/parte2.php'); // Cargar la segunda parte del layout
+include('../../layout/mensaje.php'); //cargar el mensaje
 ?>
 
 
